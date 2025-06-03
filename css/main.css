@@ -2,28 +2,55 @@ body {
     margin: 0px;
 }
 
+#canvas{  
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
 #sky{
     background: url(../img/background/night.png) repeat-x;
     animation: background 10s linear infinite;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100vh;
+    z-index: 0;
 }
 
 #ground{
     background: url(../img/background/ground.png) repeat-x;
     position: absolute;
+    height: 100px;
     width: 100%;
     bottom: 0px;
+    left: 0;
     animation: background 5s linear infinite;
 }
 
 
-.hidden{
-    display: none;
+.active{
+    display: flex;
 } 
 
-#menu{
+.hidden {
+    display: none !important;
+}
 
+#menu{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* mismo alto que el canvas */
+    z-index: 2;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    justify-content: center;
+    align-items: center;
 }
 
 
