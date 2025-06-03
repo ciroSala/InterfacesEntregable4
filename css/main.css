@@ -1,0 +1,38 @@
+body {
+    margin: 0px;
+}
+
+#sky{
+    background: url(../img/background/night.png) repeat-x;
+    animation: background 10s linear infinite;
+    position: relative;
+    height: 100vh;
+}
+
+#ground{
+    background: url(../img/background/ground.png) repeat-x;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    animation: background 5s linear infinite;
+}
+
+
+.hidden{
+    display: none;
+} 
+
+#menu{
+
+}
+
+
+@keyframes run{
+    0% { background-position: 0px; }
+    100% { background-position: -1472px; }
+}
+
+@keyframes background{
+    0% { background-position: 1920px; }
+    100% { background-position: 0px; }
+}
