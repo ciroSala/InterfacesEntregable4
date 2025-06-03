@@ -3,7 +3,15 @@ const keys = new Set();
 const sky = document.getElementById('sky');
 const ground = document.getElementById('ground');
 const menu = document.getElementById('menu');
-
+const btnRestar = document.getElementById('btn-restart');
+btnRestar.addEventListener('click', () => {
+    if(game.state.status == 'GameOver') {
+        lastTime = 0; // Reiniciar el tiempo
+        menu.classList.add('hidden');    // Ocultar menu
+        game.restart(); // Reiniciar el juego si se presiona Enter
+        requestAnimationFrame(run); // Iniciar el bucle del juego
+    }
+});
 
 // Creamos un juego con el guerrero en la posición inicial
 const game = new Game(new State('Run', new Warrior(0, 500-137, 0), new Spawner([]), new Speed(500), new Score(0)));
@@ -14,13 +22,6 @@ let lastTime = 0;
 // Escuchamos los eventos de teclado para agregar o eliminar teclas del conjunto
 document.addEventListener("keydown", function(event) {
     keys.add(event.key);
-    if(game.state.status == 'GameOver' && event.code === "Space") {
-        lastTime = 0; // Reiniciar el tiempo
-        menu.classList.add('hidden');    // Ocultar menu
-        game.restart(); // Reiniciar el juego si se presiona Enter
-        requestAnimationFrame(run); // Iniciar el bucle del juego
-    }
-
 });
 
 

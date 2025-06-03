@@ -13,8 +13,8 @@ class Score{
     }
 
     draw(ctx) {
-        ctx.fillStyle = "black";
-        ctx.font = "20px Arial";
+        ctx.fillStyle = "white";
+        ctx.font = "30px Arial";
 
         const pointText = `Score: ${Math.floor(this.points)}`; // Dibuja el puntaje en la esquina superior izquierda
          ctx.fillText(pointText, 10, 30);
