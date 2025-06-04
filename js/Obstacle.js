@@ -42,9 +42,6 @@ class Obstacle extends Object{
         if (!sprite) return;
         
         const flip = Obstacle.warriorX < this.x;
-        
-        ctx.fillStyle = 'rgba(0,0,0,0.5)';
-        ctx.fillRect(this.x,this.y,this.width,this.height);
 
         ctx.save();
         ctx.translate(this.x + this.width / 2, this.y + this.height / 2);

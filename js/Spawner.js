@@ -19,7 +19,7 @@ class Spawner{
            
             nexAt = this.jumpinTime * state.speed.value + Math.random() * 1000; // La distancia que va a tener el proximo elemento
             
-           obstacles.push(new Obstacle(1000-30, 500-128)); // Agregar un nuevo obstáculo
+           obstacles.push(new Obstacle(1300-30, 500-128)); // Agregar un nuevo obstáculo
         }
 
         return new Spawner(obstacles, nexAt);
