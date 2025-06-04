@@ -16,7 +16,7 @@ class State {
         return new State(
             'Run', // Estado inicial del juego
             new Warrior(0, 500-137, 0), // Posición inicial del guerrero
-            new Spawner([],0),
+            new Spawner([], [], 0, 1000),
             new Speed(300),
             new Score(0) // Puntuación inicial
         )

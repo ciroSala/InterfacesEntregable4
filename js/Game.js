@@ -14,6 +14,7 @@ class Game {
         return Promise.all([
             Warrior.load(),
             Obstacle.load(),
+            Coin.load(),
         ])
     }
 
