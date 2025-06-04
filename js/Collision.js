@@ -12,14 +12,16 @@ class Collision {
     }
 
     areRectsColliding(rect1, rect2) {
-        // Al rect2 (Mi obstaculo), verifico con una hitbox menos alta, porque el 
-        // Sprite ocupa de mas
+        // A los objetos, verifico con una hitbox mas chica, porque los 
+        // Sprites tienen espacio vacio de alto y ancho
+        const warrior = rect1.getHitbox();
         const obstacle = rect2.getHitbox();
+         
         return (
-            rect1.x < obstacle.x + obstacle.width &&
-            rect1.x + rect1.width > obstacle.x &&
-            rect1.y < obstacle.y + obstacle.height &&
-            rect1.y + rect1.height > obstacle.y
+            warrior.x < obstacle.x + obstacle.width &&
+            warrior.x + warrior.width > obstacle.x &&
+            warrior.y < obstacle.y + obstacle.height &&
+            warrior.y + warrior.height > obstacle.y
         );
     }
 }

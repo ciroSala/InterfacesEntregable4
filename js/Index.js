@@ -4,6 +4,7 @@ const sky = document.getElementById('sky');
 const ground = document.getElementById('ground');
 const menu = document.getElementById('menu');
 const btnRestar = document.getElementById('btn-restart');
+
 btnRestar.addEventListener('click', () => {
     if(game.state.status == 'GameOver') {
         lastTime = 0; // Reiniciar el tiempo
@@ -14,7 +15,7 @@ btnRestar.addEventListener('click', () => {
 });
 
 // Creamos un juego con el guerrero en la posición inicial
-const game = new Game(new State('Run', new Warrior(0, 500-137, 0), new Spawner([]), new Speed(500), new Score(0)));
+const game = new Game(new State('Run', new Warrior(0, 500-137, 0), new Spawner([],0), new Speed(300), new Score(0)));
 
 // Inicializamos el tiempo de la última actualización
 let lastTime = 0;

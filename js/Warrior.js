@@ -78,6 +78,8 @@ class Warrior extends Object{
     
     draw(ctx) {
         const sprite = Warrior.displaySheet.getSprite(this.stateWarrior);
+        ctx.fillStyle = 'rgba(0,0,0,0.5)';
+        ctx.fillRect(this.x,this.y,this.width,this.height);
         ctx.drawImage(
             sprite.image,
             sprite.x,
@@ -89,6 +91,15 @@ class Warrior extends Object{
             this.width,
             this.height,
         );
+    }
+
+    getHitbox() {
+        return {
+            x: this.x + 50,
+            y: this.y,
+            width: 90,
+            height: this.height,
+        };
     }
 }
 
